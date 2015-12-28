@@ -1,0 +1,9 @@
+
+/* Class = "UITextField"; placeholder = "Username or email"; ObjectID = "6yf-3J-X0c"; */
+"6yf-3J-X0c.placeholder" = "Usuario o correo electrónico";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "IO1-UX-kjn"; */
+"IO1-UX-kjn.placeholder" = "Contraseña";
+
+/* Class = "UIButton"; normalTitle = "Log in"; ObjectID = "Vat-Ur-lyR"; */
+"Vat-Ur-lyR.normalTitle" = "Acceder";

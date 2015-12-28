@@ -1,0 +1,112 @@
+bitgray-ios/bitgray-ios.xcworkspace/contents.xcworkspacedata
+bitgray-ios/bitgray-ios.xcworkspace/xcuserdata/kperez.xcuserdatad/UserInterfaceState.xcuserstate
+bitgray-ios/Pods/Manifest.lock
+bitgray-ios/Pods/AFNetworking/LICENSE
+bitgray-ios/Pods/AFNetworking/README.md
+bitgray-ios/Pods/AFNetworking/AFNetworking/AFHTTPSessionManager.h
+bitgray-ios/Pods/AFNetworking/AFNetworking/AFHTTPSessionManager.m
+bitgray-ios/Pods/AFNetworking/AFNetworking/AFNetworking.h
+bitgray-ios/Pods/AFNetworking/AFNetworking/AFNetworkReachabilityManager.h
+bitgray-ios/Pods/AFNetworking/AFNetworking/AFNetworkReachabilityManager.m
+bitgray-ios/Pods/AFNetworking/AFNetworking/AFSecurityPolicy.h
+bitgray-ios/Pods/AFNetworking/AFNetworking/AFSecurityPolicy.m
+bitgray-ios/Pods/AFNetworking/AFNetworking/AFURLRequestSerialization.h
+bitgray-ios/Pods/AFNetworking/AFNetworking/AFURLRequestSerialization.m
+bitgray-ios/Pods/AFNetworking/AFNetworking/AFURLResponseSerialization.h
+bitgray-ios/Pods/AFNetworking/AFNetworking/AFURLResponseSerialization.m
+bitgray-ios/Pods/AFNetworking/AFNetworking/AFURLSessionManager.h
+bitgray-ios/Pods/AFNetworking/AFNetworking/AFURLSessionManager.m
+bitgray-ios/Pods/AFNetworking/UIKit+AFNetworking/AFAutoPurgingImageCache.h
+bitgray-ios/Pods/AFNetworking/UIKit+AFNetworking/AFAutoPurgingImageCache.m
+bitgray-ios/Pods/AFNetworking/UIKit+AFNetworking/AFImageDownloader.h
+bitgray-ios/Pods/AFNetworking/UIKit+AFNetworking/AFImageDownloader.m
+bitgray-ios/Pods/AFNetworking/UIKit+AFNetworking/AFNetworkActivityIndicatorManager.h
+bitgray-ios/Pods/AFNetworking/UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m
+bitgray-ios/Pods/AFNetworking/UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h
+bitgray-ios/Pods/AFNetworking/UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.m
+bitgray-ios/Pods/AFNetworking/UIKit+AFNetworking/UIButton+AFNetworking.h
+bitgray-ios/Pods/AFNetworking/UIKit+AFNetworking/UIButton+AFNetworking.m
+bitgray-ios/Pods/AFNetworking/UIKit+AFNetworking/UIImage+AFNetworking.h
+bitgray-ios/Pods/AFNetworking/UIKit+AFNetworking/UIImageView+AFNetworking.h
+bitgray-ios/Pods/AFNetworking/UIKit+AFNetworking/UIImageView+AFNetworking.m
+bitgray-ios/Pods/AFNetworking/UIKit+AFNetworking/UIKit+AFNetworking.h
+bitgray-ios/Pods/AFNetworking/UIKit+AFNetworking/UIProgressView+AFNetworking.h
+bitgray-ios/Pods/AFNetworking/UIKit+AFNetworking/UIProgressView+AFNetworking.m
+bitgray-ios/Pods/AFNetworking/UIKit+AFNetworking/UIRefreshControl+AFNetworking.h
+bitgray-ios/Pods/AFNetworking/UIKit+AFNetworking/UIRefreshControl+AFNetworking.m
+bitgray-ios/Pods/AFNetworking/UIKit+AFNetworking/UIWebView+AFNetworking.h
+bitgray-ios/Pods/AFNetworking/UIKit+AFNetworking/UIWebView+AFNetworking.m
+bitgray-ios/Pods/Headers/Private/AFNetworking/AFAutoPurgingImageCache.h
+bitgray-ios/Pods/Headers/Private/AFNetworking/AFHTTPSessionManager.h
+bitgray-ios/Pods/Headers/Private/AFNetworking/AFImageDownloader.h
+bitgray-ios/Pods/Headers/Private/AFNetworking/AFNetworkActivityIndicatorManager.h
+bitgray-ios/Pods/Headers/Private/AFNetworking/AFNetworking.h
+bitgray-ios/Pods/Headers/Private/AFNetworking/AFNetworkReachabilityManager.h
+bitgray-ios/Pods/Headers/Private/AFNetworking/AFSecurityPolicy.h
+bitgray-ios/Pods/Headers/Private/AFNetworking/AFURLRequestSerialization.h
+bitgray-ios/Pods/Headers/Private/AFNetworking/AFURLResponseSerialization.h
+bitgray-ios/Pods/Headers/Private/AFNetworking/AFURLSessionManager.h
+bitgray-ios/Pods/Headers/Private/AFNetworking/UIActivityIndicatorView+AFNetworking.h
+bitgray-ios/Pods/Headers/Private/AFNetworking/UIButton+AFNetworking.h
+bitgray-ios/Pods/Headers/Private/AFNetworking/UIImage+AFNetworking.h
+bitgray-ios/Pods/Headers/Private/AFNetworking/UIImageView+AFNetworking.h
+bitgray-ios/Pods/Headers/Private/AFNetworking/UIKit+AFNetworking.h
+bitgray-ios/Pods/Headers/Private/AFNetworking/UIProgressView+AFNetworking.h
+bitgray-ios/Pods/Headers/Private/AFNetworking/UIRefreshControl+AFNetworking.h
+bitgray-ios/Pods/Headers/Private/AFNetworking/UIWebView+AFNetworking.h
+bitgray-ios/Pods/Headers/Public/AFNetworking/AFAutoPurgingImageCache.h
+bitgray-ios/Pods/Headers/Public/AFNetworking/AFHTTPSessionManager.h
+bitgray-ios/Pods/Headers/Public/AFNetworking/AFImageDownloader.h
+bitgray-ios/Pods/Headers/Public/AFNetworking/AFNetworkActivityIndicatorManager.h
+bitgray-ios/Pods/Headers/Public/AFNetworking/AFNetworking.h
+bitgray-ios/Pods/Headers/Public/AFNetworking/AFNetworkReachabilityManager.h
+bitgray-ios/Pods/Headers/Public/AFNetworking/AFSecurityPolicy.h
+bitgray-ios/Pods/Headers/Public/AFNetworking/AFURLRequestSerialization.h
+bitgray-ios/Pods/Headers/Public/AFNetworking/AFURLResponseSerialization.h
+bitgray-ios/Pods/Headers/Public/AFNetworking/AFURLSessionManager.h
+bitgray-ios/Pods/Headers/Public/AFNetworking/UIActivityIndicatorView+AFNetworking.h
+bitgray-ios/Pods/Headers/Public/AFNetworking/UIButton+AFNetworking.h
+bitgray-ios/Pods/Headers/Public/AFNetworking/UIImage+AFNetworking.h
+bitgray-ios/Pods/Headers/Public/AFNetworking/UIImageView+AFNetworking.h
+bitgray-ios/Pods/Headers/Public/AFNetworking/UIKit+AFNetworking.h
+bitgray-ios/Pods/Headers/Public/AFNetworking/UIProgressView+AFNetworking.h
+bitgray-ios/Pods/Headers/Public/AFNetworking/UIRefreshControl+AFNetworking.h
+bitgray-ios/Pods/Headers/Public/AFNetworking/UIWebView+AFNetworking.h
+bitgray-ios/Pods/Pods.xcodeproj/project.pbxproj
+bitgray-ios/Pods/Pods.xcodeproj/xcuserdata/kperez.xcuserdatad/xcschemes/AFNetworking.xcscheme
+bitgray-ios/Pods/Pods.xcodeproj/xcuserdata/kperez.xcuserdatad/xcschemes/Pods-bitgray-ios.xcscheme
+bitgray-ios/Pods/Pods.xcodeproj/xcuserdata/kperez.xcuserdatad/xcschemes/Pods-bitgray-iosTests.xcscheme
+bitgray-ios/Pods/Pods.xcodeproj/xcuserdata/kperez.xcuserdatad/xcschemes/Pods-bitgray-iosUITests.xcscheme
+bitgray-ios/Pods/Pods.xcodeproj/xcuserdata/kperez.xcuserdatad/xcschemes/Pods.xcscheme
+bitgray-ios/Pods/Pods.xcodeproj/xcuserdata/kperez.xcuserdatad/xcschemes/xcschememanagement.plist
+bitgray-ios/Pods/Target Support Files/AFNetworking/AFNetworking-dummy.m
+bitgray-ios/Pods/Target Support Files/AFNetworking/AFNetworking-prefix.pch
+bitgray-ios/Pods/Target Support Files/AFNetworking/AFNetworking.xcconfig
+bitgray-ios/Pods/Target Support Files/Pods/Pods-acknowledgements.markdown
+bitgray-ios/Pods/Target Support Files/Pods/Pods-acknowledgements.plist
+bitgray-ios/Pods/Target Support Files/Pods/Pods-dummy.m
+bitgray-ios/Pods/Target Support Files/Pods/Pods-frameworks.sh
+bitgray-ios/Pods/Target Support Files/Pods/Pods-resources.sh
+bitgray-ios/Pods/Target Support Files/Pods/Pods.debug.xcconfig
+bitgray-ios/Pods/Target Support Files/Pods/Pods.release.xcconfig
+bitgray-ios/Pods/Target Support Files/Pods-bitgray-ios/Pods-bitgray-ios-acknowledgements.markdown
+bitgray-ios/Pods/Target Support Files/Pods-bitgray-ios/Pods-bitgray-ios-acknowledgements.plist
+bitgray-ios/Pods/Target Support Files/Pods-bitgray-ios/Pods-bitgray-ios-dummy.m
+bitgray-ios/Pods/Target Support Files/Pods-bitgray-ios/Pods-bitgray-ios-frameworks.sh
+bitgray-ios/Pods/Target Support Files/Pods-bitgray-ios/Pods-bitgray-ios-resources.sh
+bitgray-ios/Pods/Target Support Files/Pods-bitgray-ios/Pods-bitgray-ios.debug.xcconfig
+bitgray-ios/Pods/Target Support Files/Pods-bitgray-ios/Pods-bitgray-ios.release.xcconfig
+bitgray-ios/Pods/Target Support Files/Pods-bitgray-iosTests/Pods-bitgray-iosTests-acknowledgements.markdown
+bitgray-ios/Pods/Target Support Files/Pods-bitgray-iosTests/Pods-bitgray-iosTests-acknowledgements.plist
+bitgray-ios/Pods/Target Support Files/Pods-bitgray-iosTests/Pods-bitgray-iosTests-dummy.m
+bitgray-ios/Pods/Target Support Files/Pods-bitgray-iosTests/Pods-bitgray-iosTests-frameworks.sh
+bitgray-ios/Pods/Target Support Files/Pods-bitgray-iosTests/Pods-bitgray-iosTests-resources.sh
+bitgray-ios/Pods/Target Support Files/Pods-bitgray-iosTests/Pods-bitgray-iosTests.debug.xcconfig
+bitgray-ios/Pods/Target Support Files/Pods-bitgray-iosTests/Pods-bitgray-iosTests.release.xcconfig
+bitgray-ios/Pods/Target Support Files/Pods-bitgray-iosUITests/Pods-bitgray-iosUITests-acknowledgements.markdown
+bitgray-ios/Pods/Target Support Files/Pods-bitgray-iosUITests/Pods-bitgray-iosUITests-acknowledgements.plist
+bitgray-ios/Pods/Target Support Files/Pods-bitgray-iosUITests/Pods-bitgray-iosUITests-dummy.m
+bitgray-ios/Pods/Target Support Files/Pods-bitgray-iosUITests/Pods-bitgray-iosUITests-frameworks.sh
+bitgray-ios/Pods/Target Support Files/Pods-bitgray-iosUITests/Pods-bitgray-iosUITests-resources.sh
+bitgray-ios/Pods/Target Support Files/Pods-bitgray-iosUITests/Pods-bitgray-iosUITests.debug.xcconfig
+bitgray-ios/Pods/Target Support Files/Pods-bitgray-iosUITests/Pods-bitgray-iosUITests.release.xcconfig

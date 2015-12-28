@@ -1,0 +1,15 @@
+{
+    "urlservices": "http://bitgray-kperez.rhcloud.com",
+    "services": {
+        "login": "/account/login/",
+        "list-clientes": "/v1.0/rest-service/clientes/",
+        "detalle-cliente": "/v1.0/rest-service/clientes/%@/",
+        "compras-cliente": "v1.0/rest-service/clientes/compras/%@/",
+        "list-compras": "/v1.0/rest-service/compras/",
+        "detalle-compra": "/v1.0/rest-service/compras/%@/",
+        "list-productos": "/v1.0/rest-service/productos/",
+        "detalle-producto": "/v1.0/rest-service/productos/%@/",
+        "list-sedes": "/v1.0/rest-service/sedes/",
+        "detalle-sede": "/v1.0/rest-service/sedes/%@/",
+    }
+}

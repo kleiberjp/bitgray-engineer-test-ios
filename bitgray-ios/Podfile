@@ -1,0 +1,17 @@
+source 'https://github.com/CocoaPods/Specs.git'
+pod 'AFNetworking', '~> 3.0'
+xcodeproj 'bitgray-ios.xcodeproj'
+
+
+target 'bitgray-ios' do
+
+end
+
+target 'bitgray-iosTests' do
+
+end
+
+target 'bitgray-iosUITests' do
+
+end
+
