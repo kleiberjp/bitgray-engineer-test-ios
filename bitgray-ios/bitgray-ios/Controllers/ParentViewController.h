@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LoadingView.h"
 #import "UITextField+TextFieldExtension.h"
-
+#import "LoadingView.h"
+#import "RestServices.h"
 
 @interface ParentViewController : UIViewController <UITextFieldDelegate, UIScrollViewDelegate, UIGestureRecognizerDelegate>
 
@@ -20,6 +20,7 @@
 @property(weak, nonatomic) UITextField *activeTextField;
 @property(weak, nonatomic) UIScrollView *scrollView;
 @property(retain, nonatomic) LoadingView *loadingView;
+@property (nonatomic, strong) RestServices *services;
 
 - (void)registerKeyboardNotifications;
 
@@ -32,6 +33,8 @@
 - (void)showLoadingView;
 
 - (void)hideLoadingView;
+
+-(void) showAlert:(NSString *) title withMessage:(NSString *) message;
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField;
 

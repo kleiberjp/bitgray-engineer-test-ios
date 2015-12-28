@@ -110,3 +110,52 @@ bitgray-ios/Pods/Target Support Files/Pods-bitgray-iosUITests/Pods-bitgray-iosUI
 bitgray-ios/Pods/Target Support Files/Pods-bitgray-iosUITests/Pods-bitgray-iosUITests-resources.sh
 bitgray-ios/Pods/Target Support Files/Pods-bitgray-iosUITests/Pods-bitgray-iosUITests.debug.xcconfig
 bitgray-ios/Pods/Target Support Files/Pods-bitgray-iosUITests/Pods-bitgray-iosUITests.release.xcconfig
+bitgray-ios/Pods/Headers/Private/JSONModel/JSONAPI.h
+bitgray-ios/Pods/Headers/Private/JSONModel/JSONHTTPClient.h
+bitgray-ios/Pods/Headers/Private/JSONModel/JSONKeyMapper.h
+bitgray-ios/Pods/Headers/Private/JSONModel/JSONModel+networking.h
+bitgray-ios/Pods/Headers/Private/JSONModel/JSONModel.h
+bitgray-ios/Pods/Headers/Private/JSONModel/JSONModelArray.h
+bitgray-ios/Pods/Headers/Private/JSONModel/JSONModelClassProperty.h
+bitgray-ios/Pods/Headers/Private/JSONModel/JSONModelError.h
+bitgray-ios/Pods/Headers/Private/JSONModel/JSONModelLib.h
+bitgray-ios/Pods/Headers/Private/JSONModel/JSONValueTransformer.h
+bitgray-ios/Pods/Headers/Private/JSONModel/NSArray+JSONModel.h
+bitgray-ios/Pods/Headers/Public/JSONModel/JSONAPI.h
+bitgray-ios/Pods/Headers/Public/JSONModel/JSONHTTPClient.h
+bitgray-ios/Pods/Headers/Public/JSONModel/JSONKeyMapper.h
+bitgray-ios/Pods/Headers/Public/JSONModel/JSONModel+networking.h
+bitgray-ios/Pods/Headers/Public/JSONModel/JSONModel.h
+bitgray-ios/Pods/Headers/Public/JSONModel/JSONModelArray.h
+bitgray-ios/Pods/Headers/Public/JSONModel/JSONModelClassProperty.h
+bitgray-ios/Pods/Headers/Public/JSONModel/JSONModelError.h
+bitgray-ios/Pods/Headers/Public/JSONModel/JSONModelLib.h
+bitgray-ios/Pods/Headers/Public/JSONModel/JSONValueTransformer.h
+bitgray-ios/Pods/Headers/Public/JSONModel/NSArray+JSONModel.h
+bitgray-ios/Pods/JSONModel/LICENSE_jsonmodel.txt
+bitgray-ios/Pods/JSONModel/README.md
+bitgray-ios/Pods/JSONModel/JSONModel/JSONModelLib.h
+bitgray-ios/Pods/JSONModel/JSONModel/JSONModel/JSONModel.h
+bitgray-ios/Pods/JSONModel/JSONModel/JSONModel/JSONModel.m
+bitgray-ios/Pods/JSONModel/JSONModel/JSONModel/JSONModelArray.h
+bitgray-ios/Pods/JSONModel/JSONModel/JSONModel/JSONModelArray.m
+bitgray-ios/Pods/JSONModel/JSONModel/JSONModel/JSONModelClassProperty.h
+bitgray-ios/Pods/JSONModel/JSONModel/JSONModel/JSONModelClassProperty.m
+bitgray-ios/Pods/JSONModel/JSONModel/JSONModel/JSONModelError.h
+bitgray-ios/Pods/JSONModel/JSONModel/JSONModel/JSONModelError.m
+bitgray-ios/Pods/JSONModel/JSONModel/JSONModelCategories/NSArray+JSONModel.h
+bitgray-ios/Pods/JSONModel/JSONModel/JSONModelCategories/NSArray+JSONModel.m
+bitgray-ios/Pods/JSONModel/JSONModel/JSONModelNetworking/JSONAPI.h
+bitgray-ios/Pods/JSONModel/JSONModel/JSONModelNetworking/JSONAPI.m
+bitgray-ios/Pods/JSONModel/JSONModel/JSONModelNetworking/JSONHTTPClient.h
+bitgray-ios/Pods/JSONModel/JSONModel/JSONModelNetworking/JSONHTTPClient.m
+bitgray-ios/Pods/JSONModel/JSONModel/JSONModelNetworking/JSONModel+networking.h
+bitgray-ios/Pods/JSONModel/JSONModel/JSONModelNetworking/JSONModel+networking.m
+bitgray-ios/Pods/JSONModel/JSONModel/JSONModelTransformations/JSONKeyMapper.h
+bitgray-ios/Pods/JSONModel/JSONModel/JSONModelTransformations/JSONKeyMapper.m
+bitgray-ios/Pods/JSONModel/JSONModel/JSONModelTransformations/JSONValueTransformer.h
+bitgray-ios/Pods/JSONModel/JSONModel/JSONModelTransformations/JSONValueTransformer.m
+bitgray-ios/Pods/Pods.xcodeproj/xcuserdata/kperez.xcuserdatad/xcschemes/JSONModel.xcscheme
+bitgray-ios/Pods/Target Support Files/JSONModel/JSONModel-dummy.m
+bitgray-ios/Pods/Target Support Files/JSONModel/JSONModel-prefix.pch
+bitgray-ios/Pods/Target Support Files/JSONModel/JSONModel.xcconfig

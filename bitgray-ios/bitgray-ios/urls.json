@@ -1,7 +1,7 @@
 {
     "urlservices": "http://bitgray-kperez.rhcloud.com",
     "services": {
-        "login": "/account/login/",
+        "login": "/rest-auth/login/",
         "list-clientes": "/v1.0/rest-service/clientes/",
         "detalle-cliente": "/v1.0/rest-service/clientes/%@/",
         "compras-cliente": "v1.0/rest-service/clientes/compras/%@/",

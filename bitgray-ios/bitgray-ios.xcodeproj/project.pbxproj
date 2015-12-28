@@ -24,6 +24,12 @@
 		0168BF071C30DAC500E45EC1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0168BF051C30DAC500E45EC1 /* Localizable.strings */; };
 		0168BF0F1C30DBC900E45EC1 /* NSString+NSStringExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0168BF0E1C30DBC900E45EC1 /* NSString+NSStringExtension.m */; };
 		0168BF121C30E69100E45EC1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0168BF111C30E69100E45EC1 /* LoginViewController.m */; };
+		0168BF291C30F6AB00E45EC1 /* Compras.m in Sources */ = {isa = PBXBuildFile; fileRef = 0168BF221C30F6AB00E45EC1 /* Compras.m */; };
+		0168BF2A1C30F6AB00E45EC1 /* Cliente.m in Sources */ = {isa = PBXBuildFile; fileRef = 0168BF241C30F6AB00E45EC1 /* Cliente.m */; };
+		0168BF2B1C30F6AB00E45EC1 /* Producto.m in Sources */ = {isa = PBXBuildFile; fileRef = 0168BF261C30F6AB00E45EC1 /* Producto.m */; };
+		0168BF2C1C30F6AB00E45EC1 /* Sede.m in Sources */ = {isa = PBXBuildFile; fileRef = 0168BF281C30F6AB00E45EC1 /* Sede.m */; };
+		0168BF2F1C30FA2000E45EC1 /* RestServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 0168BF2E1C30FA2000E45EC1 /* RestServices.m */; };
+		0168BF351C30FEDB00E45EC1 /* ResultBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0168BF341C30FEDB00E45EC1 /* ResultBase.m */; };
 		9C1EE6596F195CFCB9EE2CD8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E87B3D4BB8BA799166A29E6C /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +86,18 @@
 		0168BF0E1C30DBC900E45EC1 /* NSString+NSStringExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+NSStringExtension.m"; path = "Extensions/NSString+NSStringExtension.m"; sourceTree = "<group>"; };
 		0168BF101C30E69100E45EC1 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Controllers/LoginViewController.h; sourceTree = "<group>"; };
 		0168BF111C30E69100E45EC1 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Controllers/LoginViewController.m; sourceTree = "<group>"; };
+		0168BF211C30F6AB00E45EC1 /* Compras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Compras.h; path = Models/Compras.h; sourceTree = "<group>"; };
+		0168BF221C30F6AB00E45EC1 /* Compras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Compras.m; path = Models/Compras.m; sourceTree = "<group>"; };
+		0168BF231C30F6AB00E45EC1 /* Cliente.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cliente.h; path = Models/Cliente.h; sourceTree = "<group>"; };
+		0168BF241C30F6AB00E45EC1 /* Cliente.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cliente.m; path = Models/Cliente.m; sourceTree = "<group>"; };
+		0168BF251C30F6AB00E45EC1 /* Producto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Producto.h; path = Models/Producto.h; sourceTree = "<group>"; };
+		0168BF261C30F6AB00E45EC1 /* Producto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Producto.m; path = Models/Producto.m; sourceTree = "<group>"; };
+		0168BF271C30F6AB00E45EC1 /* Sede.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Sede.h; path = Models/Sede.h; sourceTree = "<group>"; };
+		0168BF281C30F6AB00E45EC1 /* Sede.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Sede.m; path = Models/Sede.m; sourceTree = "<group>"; };
+		0168BF2D1C30FA2000E45EC1 /* RestServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestServices.h; path = Services/RestServices.h; sourceTree = "<group>"; };
+		0168BF2E1C30FA2000E45EC1 /* RestServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RestServices.m; path = Services/RestServices.m; sourceTree = "<group>"; };
+		0168BF331C30FEDB00E45EC1 /* ResultBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResultBase.h; path = Services/ResultBase.h; sourceTree = "<group>"; };
+		0168BF341C30FEDB00E45EC1 /* ResultBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResultBase.m; path = Services/ResultBase.m; sourceTree = "<group>"; };
 		C8476485CE3EC2BB766DCF98 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E87B3D4BB8BA799166A29E6C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED642ADD271A1DFCE509BD59 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -136,6 +154,8 @@
 		0168BEAD1C2E61EC00E45EC1 /* bitgray-ios */ = {
 			isa = PBXGroup;
 			children = (
+				0168BF141C30EC1000E45EC1 /* Services */,
+				0168BF131C30EC0500E45EC1 /* Models */,
 				0168BEFF1C30CC3B00E45EC1 /* Config */,
 				0168BEE81C30C07A00E45EC1 /* Extensions */,
 				0168BEE71C30C02500E45EC1 /* UIControl */,
@@ -221,6 +241,32 @@
 				0168BF011C30CEFF00E45EC1 /* ReadFileJson.m */,
 			);
 			name = Config;
+			sourceTree = "<group>";
+		};
+		0168BF131C30EC0500E45EC1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0168BF211C30F6AB00E45EC1 /* Compras.h */,
+				0168BF221C30F6AB00E45EC1 /* Compras.m */,
+				0168BF231C30F6AB00E45EC1 /* Cliente.h */,
+				0168BF241C30F6AB00E45EC1 /* Cliente.m */,
+				0168BF251C30F6AB00E45EC1 /* Producto.h */,
+				0168BF261C30F6AB00E45EC1 /* Producto.m */,
+				0168BF271C30F6AB00E45EC1 /* Sede.h */,
+				0168BF281C30F6AB00E45EC1 /* Sede.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		0168BF141C30EC1000E45EC1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0168BF2D1C30FA2000E45EC1 /* RestServices.h */,
+				0168BF2E1C30FA2000E45EC1 /* RestServices.m */,
+				0168BF331C30FEDB00E45EC1 /* ResultBase.h */,
+				0168BF341C30FEDB00E45EC1 /* ResultBase.m */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 		7894DE90DA586FCDE73C86EA /* Pods */ = {
@@ -425,6 +471,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0168BF2B1C30F6AB00E45EC1 /* Producto.m in Sources */,
+				0168BF351C30FEDB00E45EC1 /* ResultBase.m in Sources */,
 				0168BF021C30CEFF00E45EC1 /* ReadFileJson.m in Sources */,
 				0168BEF11C30C38400E45EC1 /* LoadingView.m in Sources */,
 				0168BEB31C2E61ED00E45EC1 /* AppDelegate.m in Sources */,
@@ -432,9 +480,13 @@
 				0168BF121C30E69100E45EC1 /* LoginViewController.m in Sources */,
 				0168BEF91C30C55E00E45EC1 /* UITextField+TextFieldExtension.m in Sources */,
 				0168BEB01C2E61EC00E45EC1 /* main.m in Sources */,
+				0168BF2F1C30FA2000E45EC1 /* RestServices.m in Sources */,
 				0168BF0F1C30DBC900E45EC1 /* NSString+NSStringExtension.m in Sources */,
 				0168BEF61C30C52800E45EC1 /* UIView+ViewExtension.m in Sources */,
+				0168BF291C30F6AB00E45EC1 /* Compras.m in Sources */,
+				0168BF2C1C30F6AB00E45EC1 /* Sede.m in Sources */,
 				0168BEFC1C30C5E100E45EC1 /* UIImage+ImageExtension.m in Sources */,
+				0168BF2A1C30F6AB00E45EC1 /* Cliente.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

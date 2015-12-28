@@ -8,20 +8,25 @@
 
 #import "LoginViewController.h"
 #import "NSString+NSStringExtension.h"
+#import "ResultBase.h"
+
+@interface LoginViewController ()
+
+@property (retain, nonatomic) IBOutlet UITextField *tfUsername;
+@property (retain, nonatomic) IBOutlet UITextField *tfPassword;
+@property (weak, nonatomic) IBOutlet UIButton *btLogin;
+
+@end
 
 @implementation LoginViewController
-
-@synthesize tfUsername,
-            tfPassword,
-            btLogin;
-
+@synthesize tfUsername, tfPassword;
 
 -(void) viewDidLoad{
     [self hideKeyboardOnTap];
     [super registerKeyboardNotifications];
     [super viewDidLoad];
-    self.tfUsername.delegate = self;
-    self.tfPassword.delegate = self;
+    self.tfUsername.tag = 0;
+    self.tfPassword.tag = 1;
     [self.tfUsername resignFirstResponder];
 }
 
@@ -30,27 +35,50 @@
     [super unregisterKeyboardNotifications];
 }
 
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    if (textField.returnKeyType==UIReturnKeyDone) {
+        [self doLogin];
+    }
+}
+
+
+- (IBAction)loginUser:(id)sender {
+    [self doLogin];
+}
+
 
 #pragma mark - Metodos generales View Controller
 
-- (BOOL)validarCampos {
+-(void) doLogin{
+    [super hideKeyboard];
+    if ([self validarCampos]) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                ResultBase *result = [self.services doLoginUser:self.tfUsername.text withPassword:self.tfPassword.text];
+                if ([result isOk]) {
+                    NSLog(@"Pasar a la siguiente pantalla");
+                }
+        });
+    }
+}
+
+- (BOOL) validarCampos {
     BOOL camposValidos = YES;
     BOOL error = NO;
     
-    if (![self validateEmptyField: tfPassword]) {
-        [tfPassword becomeFirstResponder];
-        [tfPassword setError:[NSString getMessageTextError:@"field-required"]];
+    if (![self validateEmptyField: self.tfPassword]) {
+        [self.tfPassword becomeFirstResponder];
+        [self.tfPassword setError:[NSString getMessageTextError:@"field-required"]];
         error = YES;
     }
     
-    if (![self validateEmptyField:tfUsername]) {
-        [tfUsername becomeFirstResponder];
-        [tfUsername setError:[NSString getMessageTextError:@"field-required"]];
+    if (![self validateEmptyField:self.tfUsername]) {
+        [self.tfUsername becomeFirstResponder];
+        [self.tfUsername setError:[NSString getMessageTextError:@"field-required"]];
         error = YES;
     } else {
-        if (![self validateEmail:tfUsername]) {
-            [tfUsername becomeFirstResponder];
-            [tfUsername setError:[NSString getMessageTextError:@"mail-invalid"]];
+        if (![self validateEmail:self.tfUsername]) {
+            [self.tfUsername becomeFirstResponder];
+            [self.tfUsername setError:[NSString getMessageTextError:@"mail-invalid"]];
             error = YES;
         }
     }

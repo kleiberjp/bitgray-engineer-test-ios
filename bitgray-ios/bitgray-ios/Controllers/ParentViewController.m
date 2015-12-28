@@ -18,8 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self registerKeyboardNotifications];
     [self hideKeyboardOnTap];
+    [self setServices:[[RestServices alloc] initWithSuperView:self]];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -38,14 +38,15 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self registerKeyboardNotifications];
     if (self.navigationController) {
         self.navigationController.navigationBarHidden = YES;
     }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
     [self unregisterKeyboardNotifications];
+    [super viewWillDisappear:animated];
 }
 
 /*
@@ -86,6 +87,24 @@
     }
 }
 
+-(void) showAlert:(NSString *) title withMessage:(NSString *) message {
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
+                                                                             message:message
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *alert = [UIAlertAction actionWithTitle:@"OK"
+                                                    style:UIAlertActionStyleDefault
+                                                  handler:^(UIAlertAction * _Nonnull action) {
+                                                      [alertController dismissViewControllerAnimated:YES
+                                                                                          completion:nil];
+                                                  }];
+    
+    [alertController addAction:alert];
+    [self presentViewController:alertController animated:YES completion:nil];
+    
+}
+
 - (void)registerKeyboardNotifications {
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillShow:)
@@ -112,7 +131,7 @@
 }
 
 - (void)moveViewOnKeyboardHide {
-    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, (CGFloat) (self.keyboardFrame.size.height + 10.0), 0.0);
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, (CGFloat) (self.keyboardFrame.size.height + 55.0), 0.0);
     self.scrollView.contentInset = contentInsets;
     self.scrollView.scrollIndicatorInsets = contentInsets;
     
@@ -164,7 +183,7 @@
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    NSInteger nextTag = textField.tag + 1;
+    NSInteger nextTag = self.activeTextField.tag + 1;
     
     // Se ubica el siguiente responder
     UIResponder *nextResponder = [textField.superview viewWithTag:nextTag];
@@ -182,9 +201,9 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     [textField removeErrors];
     self.activeTextField = textField;
-    /*if (self.keyboardIsShowing) {
-     [self moveViewOnKeyboardHide];
-     }*/
+    if (self.keyboardIsShowing) {
+        [self moveViewOnKeyboardHide];   
+    }
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {

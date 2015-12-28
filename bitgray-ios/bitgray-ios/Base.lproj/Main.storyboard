@@ -27,21 +27,27 @@
                                             <constraint firstAttribute="width" constant="152" id="NH1-C7-U4X"/>
                                         </constraints>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username or email" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="6yf-3J-X0c" userLabel="UsernameTextField">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username or email" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="6yf-3J-X0c" userLabel="UsernameTextField">
                                         <rect key="frame" x="30" y="269" width="260" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="260" id="deD-sb-rcP"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="8YB-8i-STd"/>
+                                        </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="IO1-UX-kjn">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="IO1-UX-kjn" userLabel="PasswordTextField">
                                         <rect key="frame" x="30" y="327" width="260" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="260" id="asp-Io-w9E"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="q5P-Rt-VHu"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vat-Ur-lyR">
                                         <rect key="frame" x="90" y="417" width="140" height="36"/>
@@ -52,6 +58,9 @@
                                         <state key="normal" title="Log in">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="loginUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gmj-qe-rho"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -81,9 +90,8 @@
                     </view>
                     <connections>
                         <outlet property="btLogin" destination="Vat-Ur-lyR" id="PJu-dD-Iw4"/>
-                        <outlet property="btnLogin" destination="Vat-Ur-lyR" id="qba-sP-6XM"/>
-                        <outlet property="tfPassword" destination="IO1-UX-kjn" id="66x-lS-RDd"/>
-                        <outlet property="tfUsername" destination="6yf-3J-X0c" id="GIm-xf-tDI"/>
+                        <outlet property="tfPassword" destination="IO1-UX-kjn" id="8zn-LB-kLl"/>
+                        <outlet property="tfUsername" destination="6yf-3J-X0c" id="CG4-zj-gQt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

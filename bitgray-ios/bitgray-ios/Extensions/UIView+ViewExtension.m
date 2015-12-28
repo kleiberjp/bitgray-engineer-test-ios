@@ -10,4 +10,16 @@
 
 @implementation UIView (ViewExtension)
 
+-(UIImage *)getBackGroundImage
+{
+    UIGraphicsBeginImageContextWithOptions(self.frame.size, self.opaque, [UIScreen mainScreen].scale);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [self.layer renderInContext:context];
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    
+    return image;
+    
+}
+
 @end
