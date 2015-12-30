@@ -7,7 +7,6 @@
 //
 
 #import "ParentViewController.h"
-#import "UIView+ViewExtension.h"
 #import "NSString+NSStringExtension.h"
 
 @interface ParentViewController ()
@@ -39,9 +38,6 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self registerKeyboardNotifications];
-    if (self.navigationController) {
-        self.navigationController.navigationBarHidden = YES;
-    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -61,6 +57,21 @@
 
 #pragma mark - Metodos de Uso Generico
 
+- (void)hideNavigationBar{
+    if (self.navigationController) {
+        self.navigationController.navigationBarHidden = YES;
+    }
+}
+
+- (void)addBackButton:(NSString *)imageName andAction:(SEL)action{
+    
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:imageName]
+                                                                   style:UIBarButtonItemStylePlain
+                                                                  target:self
+                                                                  action:action];
+    [self.navigationItem setLeftBarButtonItem: backButton];
+}
+
 - (void)hideKeyboardOnTap {
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboardOnTapGesture:)];
     tap.cancelsTouchesInView = NO;
@@ -76,34 +87,6 @@
     [self.view endEditing:YES];
 }
 
-- (void)showLoadingView {
-    UIImage *image = [self.view.superview getBackGroundImage];
-    self.loadingView = [[LoadingView alloc] loadingView:self.view.superview withMessage:[NSString getMessageText:@"wait"] andBackground:image];
-}
-
-- (void)hideLoadingView {
-    if (self.loadingView) {
-        [self.loadingView performSelector:@selector(removeLoadingView) withObject:nil afterDelay:0.0];
-    }
-}
-
--(void) showAlert:(NSString *) title withMessage:(NSString *) message {
-    
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
-                                                                             message:message
-                                                                      preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction *alert = [UIAlertAction actionWithTitle:@"OK"
-                                                    style:UIAlertActionStyleDefault
-                                                  handler:^(UIAlertAction * _Nonnull action) {
-                                                      [alertController dismissViewControllerAnimated:YES
-                                                                                          completion:nil];
-                                                  }];
-    
-    [alertController addAction:alert];
-    [self presentViewController:alertController animated:YES completion:nil];
-    
-}
 
 - (void)registerKeyboardNotifications {
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -163,6 +146,18 @@
     return [uiTextField.text stringIsValidEmailAddress];
 }
 
+-(NSDate *) getCurrentTime{
+    NSDate* currentDate = [NSDate date];
+    NSTimeZone* currentTimeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
+    NSTimeZone* nowTimeZone = [NSTimeZone systemTimeZone];
+    
+    NSInteger currentGMTOffset = [currentTimeZone secondsFromGMTForDate:currentDate];
+    NSInteger nowGMTOffset = [nowTimeZone secondsFromGMTForDate:currentDate];
+    
+    NSTimeInterval interval = nowGMTOffset - currentGMTOffset;
+    NSDate* nowDate = [[NSDate alloc] initWithTimeInterval:interval sinceDate:currentDate];
+    return nowDate;
+}
 
 #pragma mark - Delegados
 

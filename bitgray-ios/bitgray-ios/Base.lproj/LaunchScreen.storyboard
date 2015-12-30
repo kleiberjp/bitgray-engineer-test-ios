@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,21 +20,57 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="jVk-5X-Rrp">
-                                <rect key="frame" x="0.0" y="20" width="600" height="600"/>
+                                <rect key="frame" x="20" y="20" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.94117647059999998" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jVk-5X-Rrp" secondAttribute="height" multiplier="400:399" id="eSb-Pw-6eH"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="eSb-Pw-6eH"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="eSb-Pw-6eH"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="72" y="115" width="256" height="570"/>
+                                </variation>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.94117647059999998" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="jVk-5X-Rrp" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="4ch-Hy-iQL"/>
-                            <constraint firstItem="jVk-5X-Rrp" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="Rex-vb-qHO"/>
-                            <constraint firstItem="jVk-5X-Rrp" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Yaq-eU-YK8"/>
-                            <constraint firstItem="jVk-5X-Rrp" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="sHg-2f-w6D"/>
+                            <constraint firstItem="jVk-5X-Rrp" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="2DK-rO-JVH"/>
+                            <constraint firstItem="jVk-5X-Rrp" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="34u-pF-utw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jVk-5X-Rrp" secondAttribute="trailing" constant="-20" id="mXl-qx-FQ5"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="jVk-5X-Rrp"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="2DK-rO-JVH"/>
+                                <exclude reference="34u-pF-utw"/>
+                                <exclude reference="mXl-qx-FQ5"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="jVk-5X-Rrp"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="2DK-rO-JVH"/>
+                                <include reference="34u-pF-utw"/>
+                                <include reference="mXl-qx-FQ5"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="-27" y="220"/>
         </scene>
     </scenes>
     <resources>

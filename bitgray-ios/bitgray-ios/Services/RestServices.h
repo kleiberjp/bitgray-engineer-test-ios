@@ -7,15 +7,32 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "ResultBase.h"
+#import "UserDefaults.h"
 
-@class ReadFileJson, ParentViewController;
+@class ReadFileJson;
 
 @interface RestServices : NSObject
 
 @property (nonatomic, strong) ReadFileJson *services;
-@property (nonatomic, retain) ParentViewController *superView;
+@property (nonatomic, retain) UIViewController *superView;
+@property(retain, nonatomic) UserDefaults  *userDefaults;
+
 
 -(ResultBase *)doLoginUser:(NSString *)username withPassword:(NSString *)password;
--(instancetype) initWithSuperView:(ParentViewController *) view;
+
+-(NSMutableArray *) getInvoices;
+
+-(NSMutableArray *) getClients;
+
+-(NSMutableArray *) getProducts;
+
+-(NSMutableArray *) getStores;
+
+-(void)updateInvoice:(NSString *)idInvoice withParams:(NSDictionary *)params;
+
+-(NSString *) createInvoice: (NSDictionary *) invoice;
+
+-(instancetype) initWithSuperView:(UIViewController *) view;
 @end

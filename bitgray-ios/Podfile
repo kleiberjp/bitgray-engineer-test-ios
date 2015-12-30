@@ -1,6 +1,7 @@
 source 'https://github.com/CocoaPods/Specs.git'
 pod 'AFNetworking', '~> 3.0'
-pod 'JSONModel'
+pod 'AMSlideMenu'
+pod 'MaterialControls', '~> 1.0.2'
 xcodeproj 'bitgray-ios.xcodeproj'
 
 

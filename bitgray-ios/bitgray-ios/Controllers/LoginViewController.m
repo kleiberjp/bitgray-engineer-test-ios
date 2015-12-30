@@ -5,7 +5,7 @@
 //  Created by Kleiber J Perez on 27/12/15.
 //  Copyright © 2015 Kleiber J Perez. All rights reserved.
 //
-
+#import "ColorPalette.h"
 #import "LoginViewController.h"
 #import "NSString+NSStringExtension.h"
 #import "ResultBase.h"
@@ -21,13 +21,25 @@
 @implementation LoginViewController
 @synthesize tfUsername, tfPassword;
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self hideNavigationBar];
+}
+
 -(void) viewDidLoad{
     [self hideKeyboardOnTap];
     [super registerKeyboardNotifications];
     [super viewDidLoad];
     self.tfUsername.tag = 0;
     self.tfPassword.tag = 1;
+    [self.btLogin setBackgroundColor:primaryColor];
     [self.tfUsername resignFirstResponder];
+    if (![[self.services.userDefaults getLastUserIncome] isEqualToString:@""]) {
+        [self.tfUsername setText:[self.services.userDefaults getLastUserIncome]];
+        [self.tfPassword setText:[self.services.userDefaults getPasswordUserIncome]];
+        [self doLogin];
+        
+    }
 }
 
 -(void) viewWillDisappear:(BOOL)animated{
@@ -55,7 +67,8 @@
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 ResultBase *result = [self.services doLoginUser:self.tfUsername.text withPassword:self.tfPassword.text];
                 if ([result isOk]) {
-                    NSLog(@"Pasar a la siguiente pantalla");
+                    [self performSegueWithIdentifier:@"goToMain" sender:self];
+                    return;
                 }
         });
     }

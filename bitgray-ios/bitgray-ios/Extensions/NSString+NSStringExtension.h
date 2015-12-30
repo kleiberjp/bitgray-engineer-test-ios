@@ -10,6 +10,8 @@
 
 @interface NSString (NSStringExtension)
 
++(BOOL) isEmpty:(NSString *)string;
+
 -(BOOL)stringIsValidEmailAddress;
 
 -(NSString *) getMessage;
@@ -17,5 +19,11 @@
 +(NSString *) getMessageText: (NSString *) findMessage;
 
 +(NSString *) getMessageTextError:(NSString *)findMessage;
+
+-(NSDate *)parseToDateFromString;
+
++(NSString *) parseToStringFromDate: (NSDate *) date;
+
+-(NSString *) parseToStringDateParam;
 
 @end
