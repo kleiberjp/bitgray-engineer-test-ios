@@ -11,7 +11,7 @@
 #import "ResultBase.h"
 #import "UserDefaults.h"
 
-@class ReadFileJson;
+@class ReadFileJson, ClienteCompras;
 
 @interface RestServices : NSObject
 
@@ -33,6 +33,8 @@
 -(void)updateInvoice:(NSString *)idInvoice withParams:(NSDictionary *)params;
 
 -(NSString *) createInvoice: (NSDictionary *) invoice;
+
+-(ClienteCompras *) getInvoicesClient:(NSString *)document;
 
 -(instancetype) initWithSuperView:(UIViewController *) view;
 @end

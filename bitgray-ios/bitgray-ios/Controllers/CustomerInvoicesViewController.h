@@ -8,7 +8,7 @@
 
 #import "ParentViewController.h"
 
-@interface CustomerInvoicesViewController : ParentViewController
+@interface CustomerInvoicesViewController : ParentViewController<UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITextField *tfClientSearch;
 @property (nonatomic, strong) UIView *searchIcon;

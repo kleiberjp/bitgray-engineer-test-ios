@@ -38,6 +38,7 @@
     _dataArray = data;
     NSInteger pickerHeight = [self returnHeight];
     [self setLocalUIViewPicker:[[UIView alloc] initWithFrame:CGRectMake(0, 0, [[self localOwner] bounds].size.width, pickerHeight)]];
+    
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, [[UIScreen mainScreen] bounds].size.width - 20, 44)];
     [label setText:title];
     [label setTextAlignment:NSTextAlignmentCenter];

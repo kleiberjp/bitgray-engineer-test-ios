@@ -9,6 +9,7 @@
 #import "RestServices.h"
 #import "AFNetworking.h"
 #import "Compras.h"
+#import "ClienteCompras.h"
 #import "Cliente.h"
 #import "Producto.h"
 #import "Sede.h"
@@ -216,6 +217,55 @@
     return idInvoiceCreated;
 }
 
+-(ClienteCompras *)getInvoicesClient:(NSString *)document{
+    dispatch_group_t group = dispatch_group_create();
+    
+    __block ClienteCompras *comprasClient = [[ClienteCompras alloc] init];
+    
+    NSString *URLString = [NSString stringWithFormat:[self.services getAddressComprasCliente], document];
+    
+    /*NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+    manager.securityPolicy.allowInvalidCertificates = YES;
+    
+    //NSMutableURLRequest *request = [[AFJSONRequestSerializer serializer] requestWithMethod:@"GET" URLString:URLString parameters:nil error:nil];*/
+    
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] init];
+    manager.securityPolicy.allowInvalidCertificates = YES;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.superView showLoadingView];
+    });
+    
+    dispatch_group_enter(group);
+    [manager GET:URLString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSArray *data = (NSArray *)responseObject;
+        if (data.count != 0) {
+            NSDictionary *item = (NSDictionary *)[data objectAtIndex:0];
+            comprasClient = [[ClienteCompras alloc] initWithDictionary:item];
+        }else{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.superView showAlert:@"Info" withMessage:[NSString stringWithFormat:[NSString getMessageText:@"message-no-client-invoice"], document]];
+            });
+        }
+        dispatch_group_leave(group);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.superView showAlert:@"Error" withMessage:[NSString stringWithFormat:@"%@", error]];
+        });
+        dispatch_group_leave(group);
+    }];
+    
+    dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.superView hideLoadingView];
+    });
+    
+    return comprasClient;
+    
+}
+
 -(NSMutableArray *)getClients{
     dispatch_group_t group = dispatch_group_create();
     NSMutableArray *listClients = [[NSMutableArray alloc] init];
@@ -256,6 +306,7 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.superView hideLoadingView];
     });
+    
     return listClients;
 }
 

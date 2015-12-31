@@ -4,7 +4,7 @@
         "login": "/rest-auth/login/",
         "list-clientes": "/v1.0/rest-service/clientes/",
         "detalle-cliente": "/v1.0/rest-service/clientes/%@/",
-        "compras-cliente": "v1.0/rest-service/clientes/compras/%@/",
+        "compras-cliente": "/v1.0/rest-service/clientes/compras/%@/",
         "list-compras": "/v1.0/rest-service/compras/",
         "detalle-compra": "/v1.0/rest-service/compras/%@/",
         "list-productos": "/v1.0/rest-service/productos/",
