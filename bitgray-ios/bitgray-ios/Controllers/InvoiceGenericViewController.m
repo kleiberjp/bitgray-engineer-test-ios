@@ -352,9 +352,6 @@ NSInteger indexClient, indexProduct, indexStore;
 #pragma mark - Delegate methods
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
-    /*if ((textField == _textFieldFechaNacimiento) || (textField == _textFieldPaisResidencia) || (textField == _textFieldSexo)) {
-        [textField resignFirstResponder];
-    }*/
     if ((textField == _tfCustomer) || (textField == _tfProducto) || (textField == _tfSede)|| (textField == _tfDate) ) {
         [textField resignFirstResponder];
     }

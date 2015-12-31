@@ -39,6 +39,7 @@
 		0168BF4E1C32832C00E45EC1 /* InvoiceGenericViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0168BF4D1C32832C00E45EC1 /* InvoiceGenericViewController.m */; };
 		0168BF511C3367A900E45EC1 /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0168BF501C3367A900E45EC1 /* PickerViewController.m */; };
 		0168BF551C33CDC600E45EC1 /* ItemCompra.m in Sources */ = {isa = PBXBuildFile; fileRef = 0168BF541C33CDC600E45EC1 /* ItemCompra.m */; };
+		0168BF581C348D0300E45EC1 /* CustomerInvoicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0168BF571C348D0300E45EC1 /* CustomerInvoicesViewController.m */; };
 		9C1EE6596F195CFCB9EE2CD8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E87B3D4BB8BA799166A29E6C /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -122,9 +123,11 @@
 		0168BF4D1C32832C00E45EC1 /* InvoiceGenericViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InvoiceGenericViewController.m; path = Controllers/InvoiceGenericViewController.m; sourceTree = "<group>"; };
 		0168BF4F1C3367A900E45EC1 /* PickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PickerViewController.h; path = UIControl/PickerViewController.h; sourceTree = "<group>"; };
 		0168BF501C3367A900E45EC1 /* PickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PickerViewController.m; path = UIControl/PickerViewController.m; sourceTree = "<group>"; };
-		0168BF521C3368F700E45EC1 /* ColorPalette.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorPalette.h; sourceTree = "<group>"; };
+		0168BF521C3368F700E45EC1 /* ColorPalette.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ColorPalette.h; path = UIControl/ColorPalette.h; sourceTree = "<group>"; };
 		0168BF531C33CDC600E45EC1 /* ItemCompra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemCompra.h; path = Models/ItemCompra.h; sourceTree = "<group>"; };
 		0168BF541C33CDC600E45EC1 /* ItemCompra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemCompra.m; path = Models/ItemCompra.m; sourceTree = "<group>"; };
+		0168BF561C348D0300E45EC1 /* CustomerInvoicesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomerInvoicesViewController.h; path = Controllers/CustomerInvoicesViewController.h; sourceTree = "<group>"; };
+		0168BF571C348D0300E45EC1 /* CustomerInvoicesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomerInvoicesViewController.m; path = Controllers/CustomerInvoicesViewController.m; sourceTree = "<group>"; };
 		C8476485CE3EC2BB766DCF98 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E87B3D4BB8BA799166A29E6C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED642ADD271A1DFCE509BD59 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -240,6 +243,8 @@
 				0168BF4A1C3262E500E45EC1 /* InvocicesTableViewControler.m */,
 				0168BF4C1C32832C00E45EC1 /* InvoiceGenericViewController.h */,
 				0168BF4D1C32832C00E45EC1 /* InvoiceGenericViewController.m */,
+				0168BF561C348D0300E45EC1 /* CustomerInvoicesViewController.h */,
+				0168BF571C348D0300E45EC1 /* CustomerInvoicesViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -533,6 +538,7 @@
 				0168BEB01C2E61EC00E45EC1 /* main.m in Sources */,
 				0168BF2F1C30FA2000E45EC1 /* RestServices.m in Sources */,
 				0168BF431C32420300E45EC1 /* UIViewController+ViewControllerExtension.m in Sources */,
+				0168BF581C348D0300E45EC1 /* CustomerInvoicesViewController.m in Sources */,
 				0168BF0F1C30DBC900E45EC1 /* NSString+NSStringExtension.m in Sources */,
 				0168BF481C3256DD00E45EC1 /* InvoiceTableViewCell.m in Sources */,
 				0168BF511C3367A900E45EC1 /* PickerViewController.m in Sources */,

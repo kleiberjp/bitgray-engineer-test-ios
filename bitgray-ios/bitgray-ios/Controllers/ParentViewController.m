@@ -178,10 +178,11 @@
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    NSInteger nextTag = self.activeTextField.tag + 1;
+    NSInteger nextTag = textField.tag + 1;
     
     // Se ubica el siguiente responder
     UIResponder *nextResponder = [textField.superview viewWithTag:nextTag];
+    self.activeTextField = (UITextField *)nextResponder;
     if (nextResponder) {
         // Encontrado el next Responder se setea
         [nextResponder becomeFirstResponder];

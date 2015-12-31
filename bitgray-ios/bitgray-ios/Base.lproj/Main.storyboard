@@ -39,7 +39,7 @@
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="8YB-8i-STd"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="IO1-UX-kjn" userLabel="PasswordTextField">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="IO1-UX-kjn" userLabel="PasswordTextField">
                                         <rect key="frame" x="30" y="327" width="260" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="260" id="asp-Io-w9E"/>
@@ -272,10 +272,10 @@
             </objects>
             <point key="canvasLocation" x="-1470" y="1088"/>
         </scene>
-        <!--View Controller-->
+        <!--Customer Invoices View Controller-->
         <scene sceneID="E02-9k-SZ3">
             <objects>
-                <viewController id="WO0-vr-CmX" sceneMemberID="viewController">
+                <viewController id="WO0-vr-CmX" customClass="CustomerInvoicesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IQM-ta-HvI"/>
                         <viewControllerLayoutGuide type="bottom" id="5gR-Wj-CkW"/>
@@ -283,9 +283,19 @@
                     <view key="view" contentMode="scaleToFill" id="cOi-He-TzV">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Dd-Yy-gva">
+                                <rect key="frame" x="20" y="20" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="hP3-hg-I51"/>
+                    <connections>
+                        <outlet property="tfClientSearch" destination="7Dd-Yy-gva" id="vhh-4N-sBh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yav-gQ-CqW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -459,7 +469,7 @@
                                     <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cost" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fSh-tI-Pvo">
                                         <rect key="frame" x="20" y="213" width="280" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                         <connections>
                                             <outlet property="delegate" destination="xg0-By-3Dk" id="GyV-5e-UwJ"/>
                                         </connections>

@@ -195,10 +195,10 @@
                 [self.superView showAlert:@"Error" withMessage:[NSString stringWithFormat:@"%@", error]];
             });
         }else{
-            idInvoiceCreated = [data objectForKey:@"id"];
+            idInvoiceCreated = (NSString *)[data objectForKey:@"id"];
             MDSnackbar *snackbar = [[MDSnackbar alloc] initWithText: [NSString getMessageText:@"invoice-created"] actionTitle:@"OK"];
             snackbar.actionTitleColor = [UIColor colorWithRed:0.298 green:0.686 blue:0.314 alpha:1];
-            snackbar.duration = 3;
+            snackbar.duration = 5;
             snackbar.multiline = YES;
             [snackbar show];
         }
