@@ -158,18 +158,19 @@ CGRect initialFrame, finalFrame;
                          [progressView showProgress];
                          dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                              [self.services downloadInvoiceForClient:clientConsulted
-                                                        withProgress:^(CGFloat progress) {
+                                                        withProgress:^(float progress) {
                                                             dispatch_async(dispatch_get_main_queue(), ^{
                                                                 [progressView setProgressComplete:progress];
                                                             });
+                                 
                                                         }
                                                           completion:^(NSURL *filePath) {
                                                               fileToOpen = filePath;
                                                               [invoice.btnDownload setTitle:[NSString getMessageText:@"open-file-downloaded-button"]
                                                                                    forState:UIControlStateNormal];
                                                               [invoice.btnDownload removeTarget:nil
-                                                                                 action:NULL
-                                                                       forControlEvents:UIControlEventAllEvents];
+                                                                                         action:NULL
+                                                                               forControlEvents:UIControlEventAllEvents];
                                                               [invoice.btnDownload addTarget:self
                                                                                       action:@selector(openFileViewOpened)
                                                                             forControlEvents:UIControlEventTouchUpInside];
@@ -178,12 +179,13 @@ CGRect initialFrame, finalFrame;
                                                                   [self showAlertSuccess:[filePath.path lastPathComponent]];
                                                               });
                                  
-                                                            }
+                                                          }
                                                              onError:^(NSError *error) {
                                                                  [progressView removeProgressView];
                                                                  dispatch_async(dispatch_get_main_queue(), ^{
                                                                      [self showAlertError:@"Error" withMessage:[NSString stringWithFormat:@"%@", error]];
                                                                  });
+                                 
                                                              }];
                             });
                          
