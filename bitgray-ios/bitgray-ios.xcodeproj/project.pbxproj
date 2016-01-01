@@ -94,9 +94,6 @@
 		0168BF001C30CEFF00E45EC1 /* ReadFileJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReadFileJson.h; path = Config/ReadFileJson.h; sourceTree = "<group>"; };
 		0168BF011C30CEFF00E45EC1 /* ReadFileJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReadFileJson.m; path = Config/ReadFileJson.m; sourceTree = "<group>"; };
 		0168BF061C30DAC500E45EC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		0168BF0A1C30DB1A00E45EC1 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
-		0168BF0B1C30DB1A00E45EC1 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		0168BF0C1C30DB1B00E45EC1 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0168BF0D1C30DBC900E45EC1 /* NSString+NSStringExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+NSStringExtension.h"; path = "Extensions/NSString+NSStringExtension.h"; sourceTree = "<group>"; };
 		0168BF0E1C30DBC900E45EC1 /* NSString+NSStringExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+NSStringExtension.m"; path = "Extensions/NSString+NSStringExtension.m"; sourceTree = "<group>"; };
 		0168BF101C30E69100E45EC1 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Controllers/LoginViewController.h; sourceTree = "<group>"; };
@@ -143,6 +140,9 @@
 		0168BF7F1C35130200E45EC1 /* InvoiceClientCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InvoiceClientCell.xib; sourceTree = "<group>"; };
 		0168BF841C35AFE400E45EC1 /* ProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProgressView.h; path = UIControl/ProgressView.h; sourceTree = "<group>"; };
 		0168BF851C35AFE400E45EC1 /* ProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProgressView.m; path = UIControl/ProgressView.m; sourceTree = "<group>"; };
+		0168BF871C36095800E45EC1 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		0168BF881C36095800E45EC1 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		0168BF891C36095900E45EC1 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C8476485CE3EC2BB766DCF98 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E87B3D4BB8BA799166A29E6C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED642ADD271A1DFCE509BD59 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -619,7 +619,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				0168BEB81C2E61ED00E45EC1 /* Base */,
-				0168BF0A1C30DB1A00E45EC1 /* es */,
+				0168BF871C36095800E45EC1 /* es */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -628,7 +628,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				0168BEBD1C2E61ED00E45EC1 /* Base */,
-				0168BF0B1C30DB1A00E45EC1 /* es */,
+				0168BF881C36095800E45EC1 /* es */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -637,7 +637,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				0168BF061C30DAC500E45EC1 /* Base */,
-				0168BF0C1C30DB1B00E45EC1 /* es */,
+				0168BF891C36095900E45EC1 /* es */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

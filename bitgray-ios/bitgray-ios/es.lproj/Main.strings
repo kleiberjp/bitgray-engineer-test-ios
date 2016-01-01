@@ -1,9 +1,96 @@
 
 /* Class = "UITextField"; placeholder = "Username or email"; ObjectID = "6yf-3J-X0c"; */
-"6yf-3J-X0c.placeholder" = "Usuario o correo electrónico";
+"6yf-3J-X0c.placeholder" = "Usuario o email";
+
+/* Class = "UILabel"; text = "Price:"; ObjectID = "7Kh-rM-aKP"; */
+"7Kh-rM-aKP.text" = "Precio:";
+
+/* Class = "UILabel"; text = "Invoices"; ObjectID = "8I4-L7-wnM"; */
+"8I4-L7-wnM.text" = "Facturas";
+
+/* Class = "UILabel"; text = "Customer consulting"; ObjectID = "922-Wl-Teg"; */
+"922-Wl-Teg.text" = "Consulta Cliente";
+
+/* Class = "UILabel"; text = "Logout"; ObjectID = "9V7-cB-FQz"; */
+"9V7-cB-FQz.text" = "Cerrar Sesion";
+
+/* Class = "UILabel"; text = "Bienvenido"; ObjectID = "Agz-rB-ZTG"; */
+"Agz-rB-ZTG.text" = "Bienvenido";
+
+/* Class = "UILabel"; accessibilityIdentifier = "lblProductName"; ObjectID = "DPi-jq-K2X"; */
+"DPi-jq-K2X.accessibilityIdentifier" = "lblProductName";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "DPi-jq-K2X"; */
+"DPi-jq-K2X.text" = "Label";
+
+/* Class = "UILabel"; accessibilityIdentifier = "lblCustomer"; ObjectID = "EZn-Aj-Fr1"; */
+"EZn-Aj-Fr1.accessibilityIdentifier" = "lblCustomer";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "EZn-Aj-Fr1"; */
+"EZn-Aj-Fr1.text" = "Label";
+
+/* Class = "UILabel"; text = "Date Invoice:"; ObjectID = "FS9-He-fpD"; */
+"FS9-He-fpD.text" = "Fecha compra:";
+
+/* Class = "UILabel"; accessibilityIdentifier = "lblInvoiceDate"; ObjectID = "G4L-Me-Dwq"; */
+"G4L-Me-Dwq.accessibilityIdentifier" = "lblInvoiceDate";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "G4L-Me-Dwq"; */
+"G4L-Me-Dwq.text" = "Label";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "IO1-UX-kjn"; */
 "IO1-UX-kjn.placeholder" = "Contraseña";
 
+/* Class = "UITextField"; placeholder = "Product"; ObjectID = "MRD-KB-qUs"; */
+"MRD-KB-qUs.placeholder" = "Producto";
+
+/* Class = "UILabel"; accessibilityIdentifier = "lblProductPrice"; ObjectID = "QEG-rp-xC5"; */
+"QEG-rp-xC5.accessibilityIdentifier" = "lblProductPrice";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "QEG-rp-xC5"; */
+"QEG-rp-xC5.text" = "Label";
+
+/* Class = "UITableViewCell"; accessibilityIdentifier = "invoiceItem"; ObjectID = "QRw-xp-xBm"; */
+"QRw-xp-xBm.accessibilityIdentifier" = "invoiceItem";
+
+/* Class = "UITextField"; placeholder = "Client"; ObjectID = "TLZ-yY-qlC"; */
+"TLZ-yY-qlC.placeholder" = "Cliente";
+
+/* Class = "UITextField"; placeholder = "Description"; ObjectID = "TQS-bP-CwQ"; */
+"TQS-bP-CwQ.placeholder" = "Descripcion";
+
 /* Class = "UIButton"; normalTitle = "Log in"; ObjectID = "Vat-Ur-lyR"; */
-"Vat-Ur-lyR.normalTitle" = "Acceder";
+"Vat-Ur-lyR.normalTitle" = "Iniciar Sesion";
+
+/* Class = "UILabel"; accessibilityIdentifier = "lblSede"; ObjectID = "Xvc-Ke-0Tw"; */
+"Xvc-Ke-0Tw.accessibilityIdentifier" = "lblSede";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Xvc-Ke-0Tw"; */
+"Xvc-Ke-0Tw.text" = "Label";
+
+/* Class = "UILabel"; text = "Producto:"; ObjectID = "a6I-le-lpA"; */
+"a6I-le-lpA.text" = "Producto:";
+
+/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "aCW-CF-evV"; */
+"aCW-CF-evV.normalTitle" = "Guardar";
+
+/* Class = "UITextField"; placeholder = "Store"; ObjectID = "dfh-sX-VSz"; */
+"dfh-sX-VSz.placeholder" = "Sede";
+
+/* Class = "UITextField"; placeholder = "Cost"; ObjectID = "fSh-tI-Pvo"; */
+"fSh-tI-Pvo.placeholder" = "Precio";
+
+/* Class = "UILabel"; text = "Store:"; ObjectID = "h8v-OQ-WH8"; */
+"h8v-OQ-WH8.text" = "Store:";
+
+/* Class = "UITextField"; placeholder = "Date"; ObjectID = "jVV-VO-krH"; */
+"jVV-VO-krH.placeholder" = "Fecha";
+
+/* Class = "UILabel"; text = "Customer:"; ObjectID = "o1v-n9-Jup"; */
+"o1v-n9-Jup.text" = "Cliente:";
+
+/* Class = "UILabel"; text = "Document Client"; ObjectID = "oWr-Df-uF4"; */
+"oWr-Df-uF4.text" = "Documento Cliente";
+
+/* Class = "UIViewController"; title = "InvoiceGenericView"; ObjectID = "xg0-By-3Dk"; */
+"xg0-By-3Dk.title" = "InvoiceGenericView";
