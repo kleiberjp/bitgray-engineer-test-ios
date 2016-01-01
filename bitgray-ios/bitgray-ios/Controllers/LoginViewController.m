@@ -47,13 +47,6 @@
     [super unregisterKeyboardNotifications];
 }
 
-- (void)textFieldDidEndEditing:(UITextField *)textField {
-    if (textField.returnKeyType==UIReturnKeyDone) {
-        [self doLogin];
-    }
-}
-
-
 - (IBAction)loginUser:(id)sender {
     [self doLogin];
 }
