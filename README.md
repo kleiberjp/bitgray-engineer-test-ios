@@ -8,12 +8,12 @@ The project has e .json file that contains the urls of the rest services, and ar
 
 If want to export project in Xcode or AppCode (JetBrains) ide after open project
   
-  cd <PATH TO PROJECT>/bitgray-ios
-  pod install
+    cd <PATH TO PROJECT>/bitgray-ios
+    pod install
   
 Wait until install all library before
 
-  open bitgray-ios.xcworspace
+    open bitgray-ios.xcworspace
   
   
 the project is constructed by the following path
