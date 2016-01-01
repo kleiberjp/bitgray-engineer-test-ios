@@ -44,6 +44,9 @@
     return [_urlServices stringByAppendingString:[self getValueFor:@"compras-cliente" inSection:@"services"]];
 }
 
+-(NSString *) getAddressDownloadInvoice{
+    return [_urlServices stringByAppendingString:[self getValueFor:@"download-compras" inSection:@"services"]];
+}
 
 #pragma funciones urls compras
 

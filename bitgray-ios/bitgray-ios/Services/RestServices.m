@@ -19,7 +19,7 @@
 #import "ParentViewController.h"
 #import "ResultBase.h"
 #import "ReadFileJson.h"
-
+#import <MDProgress.h>
 
 @implementation RestServices
 @synthesize superView = _superView;
@@ -395,6 +395,64 @@
         [self.superView hideLoadingView];
     });
     return listStores;
+}
+
+-(void) downloadInvoiceForClient:(ClienteCompras *)client withProgress:(void (^)(float progress))progressBlock completion:(void (^)(NSURL *filePath))completionBlock onError:(void (^)(NSError *error))errorBlock
+{
+    NSString *URLString = [NSString stringWithFormat:[self.services getAddressDownloadInvoice], [NSString stringWithFormat:@"%.0f", client.documento]];
+    
+    MDProgress *determinateProgress = [[MDProgress alloc] init];
+    [determinateProgress setStyle:Linear];
+    [determinateProgress setType:Determinate];
+    
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+    
+    //Most URLs I come across are in string format so to convert them into an NSURL and then instantiate the actual request
+    NSURL *formattedURL = [NSURL URLWithString:URLString];
+    NSURLRequest *request = [NSURLRequest requestWithURL:formattedURL];
+    
+    //Watch the manager to see how much of the file it's downloaded
+
+    [manager setDownloadTaskDidWriteDataBlock:^(NSURLSession *session, NSURLSessionDownloadTask *downloadTask, int64_t bytesWritten, int64_t totalBytesWritten, int64_t totalBytesExpectedToWrite) {
+        //Convert totalBytesWritten and totalBytesExpectedToWrite into floats so that percentageCompleted doesn't get rounded to the nearest integer
+        float written = (float)totalBytesWritten;
+        float total = (float)totalBytesExpectedToWrite;
+        float percentageCompleted = fabsf(written/total);
+        //Return the completed progress so we can display it somewhere else in app
+        progressBlock(percentageCompleted);
+    }];
+    
+    //Start the download
+    NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request progress:nil destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
+        //Getting the path of the document directory
+        NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
+        NSURL *fullURL = [documentsDirectoryURL URLByAppendingPathComponent:[NSString stringWithFormat:[NSString getMessageText:@"name-document"], client.nombres]];
+        
+        //If we already have a video file saved, remove it from the phone
+        [self removeVideoAtPath:fullURL];
+        return fullURL;
+    } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
+        if (!error) {
+            //If there's no error, return the completion block
+            completionBlock(filePath);
+        } else {
+            //Otherwise return the error block
+            errorBlock(error);
+        }
+        
+    }];
+    
+    [downloadTask resume];
+}
+
+-(void)removeVideoAtPath:(NSURL *)filePath
+{
+    NSString *stringPath = filePath.path;
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if ([fileManager fileExistsAtPath:stringPath]) {
+        [fileManager removeItemAtPath:stringPath error:NULL];
+    }
 }
 
 @end

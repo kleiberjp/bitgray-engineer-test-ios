@@ -13,10 +13,18 @@
 #import "ItemClienteCompras.h"
 #import "NSString+NSStringExtension.h"
 #import "UIView+ViewExtension.h"
+#import <MDProgress.h>
+#import "ProgressView.h"
+#import "UIViewController+ViewControllerExtension.h"
+#import <UIProgressView+AFNetworking.h>
 
 @implementation CustomerInvoicesViewController
 @synthesize searchIcon = _searchIcon;
 InvoiceClientView *invoice;
+ClienteCompras *clientConsulted;
+ProgressView *progressView;
+UIView *viewInvoiceFile;
+NSURL *fileToOpen;
 
 CGRect initialFrame, finalFrame;
 
@@ -72,11 +80,15 @@ CGRect initialFrame, finalFrame;
     if (textField.returnKeyType==UIReturnKeySearch) {
         if (![self validateEmptyField: self.tfClientSearch]) {
             [self.tfClientSearch setError:[NSString getMessageText:@"field-required"]];
-        }else{
+        }else if (![self validateNumberField:self.tfClientSearch]){
+            [self.tfClientSearch setError:[NSString getMessageText:@"field-number-invalid"]];
+        }
+        else{
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 ClienteCompras *comprasClient = [self.services getInvoicesClient:self.tfClientSearch.text];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     if(![NSString isEmpty:comprasClient.nombres]){
+                        clientConsulted = comprasClient;
                         [self showModalInvoice:comprasClient];
                     }
                 });
@@ -103,6 +115,10 @@ CGRect initialFrame, finalFrame;
     
     [invoice.btnClose addTarget:self action:@selector(dismissInvoice) forControlEvents:UIControlEventTouchUpInside];
     
+    [invoice.btnDownload removeTarget:nil action:NULL forControlEvents:UIControlEventAllEvents];
+    [invoice.btnDownload setTitle:[NSString getMessageText:@"download-button"] forState:UIControlStateNormal];
+    [invoice.btnDownload addTarget:self action:@selector(downloadFileInvoice) forControlEvents:UIControlEventTouchUpInside];
+    
     invoice.contentTableView.delegate = self;
     invoice.contentTableView.dataSource = self;
     [invoice.contentTableView reloadData];
@@ -122,6 +138,218 @@ CGRect initialFrame, finalFrame;
                      completion:^(BOOL finished) {
                          [invoice.blurEffectView removeFromSuperview];
                     
+                     }
+     ];
+}
+
+-(void) downloadFileInvoice{
+    progressView = [[ProgressView alloc] initWithView:invoice.localView andBackground:[self.view getBackGroundImage]];
+    
+    [UIView animateWithDuration:0.45
+                          delay:0.1
+                        options:UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         CGRect frame = invoice.containerView.frame;
+                         frame.origin.y = self.view.frame.size.height;
+                         [invoice.containerView setFrame:frame];
+                     }
+                     completion:^(BOOL finished) {
+                         invoice.btnClose.hidden = YES;
+                         [progressView showProgress];
+                         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                             [self.services downloadInvoiceForClient:clientConsulted
+                                                        withProgress:^(CGFloat progress) {
+                                                            dispatch_async(dispatch_get_main_queue(), ^{
+                                                                [progressView setProgressComplete:progress];
+                                                            });
+                                                        }
+                                                          completion:^(NSURL *filePath) {
+                                                              fileToOpen = filePath;
+                                                              [invoice.btnDownload setTitle:[NSString getMessageText:@"open-file-downloaded-button"]
+                                                                                   forState:UIControlStateNormal];
+                                                              [invoice.btnDownload removeTarget:nil
+                                                                                 action:NULL
+                                                                       forControlEvents:UIControlEventAllEvents];
+                                                              [invoice.btnDownload addTarget:self
+                                                                                      action:@selector(openFileViewOpened)
+                                                                            forControlEvents:UIControlEventTouchUpInside];
+                                                              [progressView removeProgressView];
+                                                              dispatch_async(dispatch_get_main_queue(), ^{
+                                                                  [self showAlertSuccess:[filePath.path lastPathComponent]];
+                                                              });
+                                 
+                                                            }
+                                                             onError:^(NSError *error) {
+                                                                 [progressView removeProgressView];
+                                                                 dispatch_async(dispatch_get_main_queue(), ^{
+                                                                     [self showAlertError:@"Error" withMessage:[NSString stringWithFormat:@"%@", error]];
+                                                                 });
+                                                             }];
+                            });
+                         
+                     }
+     ];
+}
+
+-(void) showAlertError:(NSString *) title withMessage:(NSString *) message {
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
+                                                                             message:message
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *alert = [UIAlertAction actionWithTitle:@"OK"
+                                                    style:UIAlertActionStyleDefault
+                                                  handler:^(UIAlertAction * _Nonnull action) {
+                                                      [alertController dismissViewControllerAnimated:YES
+                                                                                          completion:nil];
+                                                      [UIView animateWithDuration:0.35
+                                                                            delay:0.1
+                                                                          options:UIViewAnimationOptionCurveEaseIn
+                                                                       animations:^{
+                                                                           CGRect frame = invoice.containerView.frame;
+                                                                           frame.origin.y = 0;
+                                                                           [invoice.containerView setFrame:frame];
+                                                                       }
+                                                                       completion:^(BOOL finished) {
+                                                                           invoice.btnClose.hidden = NO;
+                                                                       }
+                                                       ];
+                                                  }];
+    
+    [alertController addAction:alert];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+    
+
+
+-(void)showAlertSuccess:(NSString *)namefile{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[NSString getMessageText:@"title-alert-success"]
+                                                                             message:[NSString stringWithFormat:[NSString getMessageText:@"message-alert-success"], namefile]
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *_continue = [UIAlertAction actionWithTitle:[NSString getMessageText:@"open-file-button"]
+                                                        style:UIAlertActionStyleDefault
+                                                      handler:^(UIAlertAction * _Nonnull action) {
+                                                          [self openFile];
+                                                      }];
+    
+    UIAlertAction *_cancel = [UIAlertAction actionWithTitle:[NSString getMessageText:@"cancel-button"]
+                                                      style:UIAlertActionStyleDestructive
+                                                    handler:^(UIAlertAction * _Nonnull action) {
+                                                        [alertController dismissViewControllerAnimated:YES
+                                                                                            completion:nil];
+                                                        [UIView animateWithDuration:0.35
+                                                                              delay:0.1
+                                                                            options:UIViewAnimationOptionCurveEaseIn
+                                                                         animations:^{
+                                                                             CGRect frame = invoice.containerView.frame;
+                                                                             frame.origin.y = 0;
+                                                                             [invoice.containerView setFrame:frame];
+                                                                         }
+                                                                         completion:^(BOOL finished) {
+                                                                             invoice.btnClose.hidden = NO;
+
+                                                                         }
+                                                         ];
+                                                    }];
+    
+    
+    [alertController addAction:_continue];
+    [alertController addAction:_cancel];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+    
+}
+
+-(void) openFile{
+    //CGRect fullScreenRect=[[UIScreen mainScreen]applicationFrame];
+    viewInvoiceFile = [[UIView alloc] initWithFrame:invoice.localView.frame];
+    viewInvoiceFile.backgroundColor = [UIColor clearColor];
+    
+    UIButton *btnClose = [[UIButton alloc] init];
+    [btnClose setFrame:CGRectMake(invoice.localView.bounds.size.width - 58, 20, 48, 48)];
+    [btnClose setBackgroundColor:[UIColor clearColor]];
+    [btnClose setImage:[UIImage imageNamed:@"CloseIcon"] forState:UIControlStateNormal];
+    [btnClose addTarget:self action:@selector(closeWebView) forControlEvents:UIControlEventTouchUpInside];
+    [viewInvoiceFile addSubview:btnClose];
+    
+    UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(10, btnClose.frame.origin.y + btnClose.frame.size.height + 10, invoice.localView.frame.size.width -20, invoice.localView.frame.size.height - ((btnClose.frame.origin.y + btnClose.frame.size.height + 10)* 2))];
+    
+    NSString *path = fileToOpen.path;
+    NSURL *targetURL = [NSURL fileURLWithPath:path];
+    NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];
+    [webView loadRequest:request];
+    [viewInvoiceFile addSubview:webView];
+    
+    [invoice.localView addSubview:viewInvoiceFile];
+    CATransition *animation = [CATransition animation];
+    [animation setType:kCATransitionFade];
+    [[invoice.localView layer] addAnimation:animation forKey:@"layerAnimation"];
+}
+
+
+-(void) openFileViewOpened{
+    viewInvoiceFile = [[UIView alloc] initWithFrame:invoice.localView.frame];
+    viewInvoiceFile.backgroundColor = [UIColor clearColor];
+    
+    UIButton *btnClose = [[UIButton alloc] init];
+    [btnClose setFrame:CGRectMake(invoice.localView.bounds.size.width - 58, 20, 48, 48)];
+    [btnClose setBackgroundColor:[UIColor clearColor]];
+    [btnClose setImage:[UIImage imageNamed:@"CloseIcon"] forState:UIControlStateNormal];
+    [btnClose addTarget:self action:@selector(closeWebView) forControlEvents:UIControlEventTouchUpInside];
+    [viewInvoiceFile addSubview:btnClose];
+    
+    UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(10, btnClose.frame.origin.y + btnClose.frame.size.height + 10, invoice.localView.frame.size.width -20, invoice.localView.frame.size.height - ((btnClose.frame.origin.y + btnClose.frame.size.height + 10)* 2))];
+    
+    NSString *path = fileToOpen.path;
+    NSURL *targetURL = [NSURL fileURLWithPath:path];
+    NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];
+    [webView loadRequest:request];
+    [viewInvoiceFile addSubview:webView];
+    
+    [UIView animateWithDuration:0.45
+                          delay:0.1
+                        options:UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         CGRect frame = invoice.containerView.frame;
+                         frame.origin.y = self.view.frame.size.height;
+                         [invoice.containerView setFrame:frame];
+                     }
+                     completion:^(BOOL finished) {
+                         invoice.btnClose.hidden = YES;
+                         [invoice.localView addSubview:viewInvoiceFile];
+                         CATransition *animation = [CATransition animation];
+                         [animation setType:kCATransitionFade];
+                         [[invoice.localView layer] addAnimation:animation forKey:@"layerAnimation"];
+                     }
+     ];
+    
+}
+
+
+-(void)closeWebView{
+    [UIView animateWithDuration:0.35
+                          delay:0.1
+                        options:UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         CGRect frame = viewInvoiceFile.frame;
+                         frame.origin.y = invoice.localView.frame.size.height;
+                         [viewInvoiceFile setFrame:frame];
+                     }
+                     completion:^(BOOL finished) {
+                         [UIView animateWithDuration:0.35
+                                               delay:0.1
+                                             options:UIViewAnimationOptionCurveEaseIn
+                                          animations:^{
+                                              CGRect frame = invoice.containerView.frame;
+                                              frame.origin.y = 0;
+                                              [invoice.containerView setFrame:frame];
+                                          }
+                                          completion:^(BOOL finished) {
+                                              invoice.btnClose.hidden = NO;
+                                              
+                                          }
+                          ];
                      }
      ];
 }

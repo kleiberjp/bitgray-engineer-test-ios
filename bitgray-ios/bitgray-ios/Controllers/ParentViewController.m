@@ -146,6 +146,13 @@
     return [uiTextField.text stringIsValidEmailAddress];
 }
 
+-(BOOL) validateNumberField:(UITextField *)textfield{
+    NSScanner *scanner = [NSScanner scannerWithString:textfield.text];
+    BOOL isNumeric = [scanner scanInteger:NULL] && [scanner isAtEnd];
+    return isNumeric;
+}
+
+
 -(NSDate *) getCurrentTime{
     NSDate* currentDate = [NSDate date];
     NSTimeZone* currentTimeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];

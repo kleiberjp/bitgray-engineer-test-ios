@@ -36,5 +36,8 @@
 
 -(ClienteCompras *) getInvoicesClient:(NSString *)document;
 
+-(void) downloadInvoiceForClient:(ClienteCompras *)client withProgress:(void (^)(float progress))progressBlock completion:(void (^)(NSURL *filePath))completionBlock onError:(void (^)(NSError *error))errorBlock;
+
+
 -(instancetype) initWithSuperView:(UIViewController *) view;
 @end

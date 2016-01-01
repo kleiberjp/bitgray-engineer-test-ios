@@ -44,6 +44,7 @@
 		0168BF7B1C34BDF600E45EC1 /* InvoiceClientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0168BF7A1C34BDF600E45EC1 /* InvoiceClientView.m */; };
 		0168BF7E1C34E48200E45EC1 /* InvoiceClientCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0168BF7D1C34E48200E45EC1 /* InvoiceClientCell.m */; };
 		0168BF801C35130200E45EC1 /* InvoiceClientCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0168BF7F1C35130200E45EC1 /* InvoiceClientCell.xib */; };
+		0168BF861C35AFE400E45EC1 /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0168BF851C35AFE400E45EC1 /* ProgressView.m */; };
 		9C1EE6596F195CFCB9EE2CD8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E87B3D4BB8BA799166A29E6C /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -140,6 +141,8 @@
 		0168BF7C1C34E48200E45EC1 /* InvoiceClientCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InvoiceClientCell.h; path = UIControl/InvoiceClientCell.h; sourceTree = "<group>"; };
 		0168BF7D1C34E48200E45EC1 /* InvoiceClientCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InvoiceClientCell.m; path = UIControl/InvoiceClientCell.m; sourceTree = "<group>"; };
 		0168BF7F1C35130200E45EC1 /* InvoiceClientCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InvoiceClientCell.xib; sourceTree = "<group>"; };
+		0168BF841C35AFE400E45EC1 /* ProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProgressView.h; path = UIControl/ProgressView.h; sourceTree = "<group>"; };
+		0168BF851C35AFE400E45EC1 /* ProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProgressView.m; path = UIControl/ProgressView.m; sourceTree = "<group>"; };
 		C8476485CE3EC2BB766DCF98 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E87B3D4BB8BA799166A29E6C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED642ADD271A1DFCE509BD59 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -275,6 +278,8 @@
 				0168BF7A1C34BDF600E45EC1 /* InvoiceClientView.m */,
 				0168BF7C1C34E48200E45EC1 /* InvoiceClientCell.h */,
 				0168BF7D1C34E48200E45EC1 /* InvoiceClientCell.m */,
+				0168BF841C35AFE400E45EC1 /* ProgressView.h */,
+				0168BF851C35AFE400E45EC1 /* ProgressView.m */,
 			);
 			name = UIControl;
 			sourceTree = "<group>";
@@ -556,6 +561,7 @@
 				0168BEE61C30BF6600E45EC1 /* ParentViewController.m in Sources */,
 				0168BF7E1C34E48200E45EC1 /* InvoiceClientCell.m in Sources */,
 				0168BF551C33CDC600E45EC1 /* ItemCompra.m in Sources */,
+				0168BF861C35AFE400E45EC1 /* ProgressView.m in Sources */,
 				0168BF121C30E69100E45EC1 /* LoginViewController.m in Sources */,
 				0168BF3A1C3217AD00E45EC1 /* MainViewController.m in Sources */,
 				0168BF4B1C3262E500E45EC1 /* InvocicesTableViewControler.m in Sources */,

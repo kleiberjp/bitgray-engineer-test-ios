@@ -72,7 +72,7 @@
                                                   }];
     
     UIAlertAction *_cancel = [UIAlertAction actionWithTitle:[NSString getMessageText:@"cancel-button"]
-                                                          style:UIAlertActionStyleCancel
+                                                          style:UIAlertActionStyleDestructive
                                                         handler:^(UIAlertAction * _Nonnull action) {
                                                             [alertController dismissViewControllerAnimated:YES
                                                                                                 completion:nil];

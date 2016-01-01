@@ -122,7 +122,7 @@ CGPathRef NewPathWithRoundRect(CGRect rect, CGFloat cornerRadius)
     labelFrame.size.height = totalHeight + 20;
     fondoLoading.frame = labelFrame;
     
-    fondoLoading.backgroundColor = [UIColor colorWithPatternImage:[[imageBackground cropImage:CGRectMake(30, labelFrame.origin.y, labelFrame.size.width, totalHeight)]applyExtraLightEffect]];
+    fondoLoading.backgroundColor = [UIColor colorWithPatternImage:[[imageBackground cropImage:CGRectMake(30, labelFrame.origin.y, labelFrame.size.width, totalHeight)] applyExtraLightEffect]];
     
     //blurredBgImage.image = [imageBackground applyDarkEffect];
     blurredBgImage.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];

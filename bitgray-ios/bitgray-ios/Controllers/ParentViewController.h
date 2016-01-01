@@ -38,5 +38,7 @@
 
 - (BOOL)validateEmail:(UITextField *)uiTextField;
 
+-(BOOL) validateNumberField:(UITextField *)textfield;
+
 -(NSDate *) getCurrentTime;
 @end

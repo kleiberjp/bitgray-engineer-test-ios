@@ -23,6 +23,7 @@
 -(NSString *) getAddressListaClientes;
 -(NSString *) getAddressDetalleCliente;
 -(NSString *) getAddressComprasCliente;
+-(NSString *) getAddressDownloadInvoice;
 
 #pragma urls compras
 
