@@ -4,7 +4,9 @@ This repository contains code IOS app for connect with app Bitgray Python REST S
 The data is consumed from the rest services of Python Django project
 Used patter desing as MVC , extensions of controller IOS, used pod for library third
 
-The project has e .json file that contains the urls of the rest services, and are readed by the app for consult the data
+The app is thinked as a app administrative for consult data of purchases, so can´t create new users, and only can acces managers.
+
+The project has a .json file that contains the urls of the rest services, and are readed by the app for consult the data
 
 If want to export project in Xcode or AppCode (JetBrains) ide after open project
   
@@ -26,5 +28,15 @@ the project is constructed by the following path
       Extensions/..   /* Contains files for category extensions of class ios */
       UIControl/...   /* Views customized for apps */
       Controllers/..   /* All views for apps */
-      
-      
+
+Access Data
+____________
+
+the credentials for access at app are the same of Python Project
+
+    user:
+    admin@bitgray.co
+
+    password:
+    2vD2vNT1VHw8
+
